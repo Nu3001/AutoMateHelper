@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.zaphod.TorqueHelper"
+    package="com.zaphod.AutoMateHelper"
     android:versionCode="1"
     android:versionName="1.0" >
 
@@ -11,13 +11,65 @@
         android:icon="@drawable/ic_launcher"
         android:theme="@android:style/Theme.Translucent">
         <activity
-            android:name="com.zaphod.TorqueHelper.TorqueHelper"
-            android:label="@string/title_activity_torque_helper"
+            android:name="com.zaphod.AutoMateHelper.MapHelper"
+            android:label="@string/title_activity_automate_helper"
+            android:launchMode="singleTop"
+            android:excludeFromRecents="true">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <category android:name="and"/>
+                <data android:scheme="waze"/>
+                <data android:scheme="geo"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+		        <data android:scheme="geo"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:mimeType="vnd.android.cursor.item/postal-address_v2"/>
+                <data android:mimeType="vnd.android.cursor.item/postal-address"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="maps.google.com" android:pathPrefix="/maps" android:scheme="http"/>
+            </intent-filter>
+        </activity>
+	<activity
+            android:name="com.zaphod.AutoMateHelper.PhoneHelper"
+            android:label="@string/title_activity_automate_helper"
+            android:launchMode="singleTop"
+            android:excludeFromRecents="true">
+            <intent-filter>
+                <action android:name="android.intent.action.DIAL" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+	<activity
+            android:name="com.zaphod.AutoMateHelper.MusicHelper"
+            android:label="@string/title_activity_automate_helper"
             android:launchMode="singleTop"
             android:excludeFromRecents="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.APP_MUSIC" />
+            </intent-filter>
+        </activity>
+	<activity
+            android:name="com.zaphod.AutoMateHelper.AutomotiveHelper"
+            android:label="@string/title_activity_automate_helper"
+            android:launchMode="singleTop"
+            android:excludeFromRecents="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.CAR_MODE" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
